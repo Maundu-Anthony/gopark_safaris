@@ -7,6 +7,7 @@ const Packages = () => {
       title: 'Maasai Mara Classic',
       duration: '3 Days / 2 Nights',
       price: 'From $450',
+      image: '/images/mara.jpg',
       features: [
         'Game drives in Maasai Mara National Reserve',
         'Accommodation in luxury tented camp',
@@ -20,6 +21,7 @@ const Packages = () => {
       title: 'Amboseli Explorer',
       duration: '4 Days / 3 Nights',
       price: 'From $580',
+      image: '/images/amboseli.jpg',
       features: [
         'Amboseli National Park game drives',
         'View of Mount Kilimanjaro',
@@ -33,6 +35,7 @@ const Packages = () => {
       title: 'Coastal Paradise',
       duration: '5 Days / 4 Nights',
       price: 'From $720',
+      image: '/images/diani.jpg',
       features: [
         'Beach resort accommodation',
         'Mombasa city tour',
@@ -46,6 +49,7 @@ const Packages = () => {
       title: 'Great Migration Safari',
       duration: '7 Days / 6 Nights',
       price: 'From $1,450',
+      image: '/images/migration.jpg',
       features: [
         'Witness the Great Migration',
         'Maasai Mara & Serengeti',
@@ -59,6 +63,7 @@ const Packages = () => {
       title: 'Mt. Kenya Adventure',
       duration: '5 Days / 4 Nights',
       price: 'From $890',
+      image: '/images/mount-kenya.jpg',
       features: [
         'Mountain trekking expedition',
         'Professional mountain guide',
@@ -72,6 +77,7 @@ const Packages = () => {
       title: 'Complete Kenya Safari',
       duration: '10 Days / 9 Nights',
       price: 'From $2,200',
+      image: '/images/lc.jpg',
       features: [
         'Multiple national parks',
         'Maasai Mara, Amboseli, Nakuru',
@@ -101,6 +107,7 @@ const Packages = () => {
               title={pkg.title}
               duration={pkg.duration}
               price={pkg.price}
+              image={pkg.image}
               features={pkg.features}
             />
           ))}

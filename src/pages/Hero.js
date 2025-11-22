@@ -2,8 +2,17 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center bg-gradient-to-br from-safari-olive to-dark-leather mt-20">
-      <div className="absolute inset-0 bg-black opacity-40"></div>
+    <section 
+      id="home" 
+      className="relative h-screen flex items-center justify-center mt-20"
+      style={{
+        backgroundImage: 'url(/images/savannah.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative z-10 text-center text-white px-4">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
           Go Park Safaris
