@@ -19,9 +19,9 @@ const Gallery = () => {
     <section id="gallery" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Gallery</h2>
-          <div className="w-24 h-1 bg-green-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-safari-olive mb-4">Gallery</h2>
+          <div className="w-24 h-1 bg-sunset-orange mx-auto mb-4"></div>
+          <p className="text-dark-leather max-w-2xl mx-auto">
             Explore the breathtaking beauty and incredible wildlife experiences that await you
           </p>
         </div>
@@ -38,7 +38,7 @@ const Gallery = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-gray-700 italic">
+          <p className="text-dark-leather italic">
             Note: Add your safari images to the <code className="bg-gray-200 px-2 py-1 rounded">/public/images/gallery/</code> folder
           </p>
         </div>

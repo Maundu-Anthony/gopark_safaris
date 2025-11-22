@@ -2,8 +2,8 @@ import React from 'react';
 
 const PackageCard = ({ title, duration, price, features, image }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-      <div className="h-48 bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center">
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 border border-warm-khaki">
+      <div className="h-48 bg-gradient-to-r from-safari-olive to-sunset-orange flex items-center justify-center">
         {image ? (
           <img src={image} alt={title} className="w-full h-full object-cover" />
         ) : (
@@ -13,22 +13,22 @@ const PackageCard = ({ title, duration, price, features, image }) => {
         )}
       </div>
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-gray-800 mb-2">{title}</h3>
+        <h3 className="text-2xl font-bold text-safari-olive mb-2">{title}</h3>
         <div className="flex justify-between items-center mb-4">
-          <span className="text-gray-600">{duration}</span>
-          <span className="text-2xl font-bold text-green-600">{price}</span>
+          <span className="text-dark-leather/70">{duration}</span>
+          <span className="text-2xl font-bold text-sunset-orange">{price}</span>
         </div>
         <ul className="space-y-2 mb-6">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start">
-              <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-sunset-orange mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              <span className="text-gray-700">{feature}</span>
+              <span className="text-dark-leather">{feature}</span>
             </li>
           ))}
         </ul>
-        <button className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors duration-300 font-semibold">
+        <button className="w-full bg-sunset-orange text-white py-3 rounded-lg hover:bg-sunset-orange/90 transition-colors duration-300 font-semibold">
           Book Now
         </button>
       </div>

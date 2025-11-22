@@ -84,12 +84,12 @@ const Packages = () => {
   ];
 
   return (
-    <section id="packages" className="py-20 bg-gray-50">
+    <section id="packages" className="py-20 bg-warm-khaki">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Safari Packages</h2>
-          <div className="w-24 h-1 bg-green-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-safari-olive mb-4">Safari Packages</h2>
+          <div className="w-24 h-1 bg-sunset-orange mx-auto mb-4"></div>
+          <p className="text-dark-leather max-w-2xl mx-auto">
             Choose from our carefully curated safari packages or let us create a custom itinerary for you
           </p>
         </div>
@@ -107,12 +107,12 @@ const Packages = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-gray-700 mb-4">
+          <p className="text-dark-leather mb-4">
             Can't find the perfect package? We'll create a custom safari just for you!
           </p>
           <button 
             onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-            className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors duration-300 font-semibold"
+            className="bg-sunset-orange text-white px-8 py-3 rounded-lg hover:bg-sunset-orange/90 transition-colors duration-300 font-semibold"
           >
             Request Custom Package
           </button>
