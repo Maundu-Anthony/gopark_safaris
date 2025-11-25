@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative z-10 text-center text-white px-4">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-          Go Park Safaris
+          GoPark Safaris
         </h1>
         <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
           Discover the Wild Beauty of Kenya - Your Gateway to Unforgettable Safari Adventures

@@ -1,6 +1,6 @@
-# Go Park Safaris Website
+# GoPark Safaris Website
 
-A professional single-page application (SPA) for Go Park Safaris built with React and Tailwind CSS.
+A professional single-page application (SPA) for GoPark Safaris built with React and Tailwind CSS.
 
 ## Project Structure
 
@@ -155,7 +155,7 @@ Works on all modern browsers:
 
 ## License
 
-© 2025 Go Park Safaris. All rights reserved.
+© 2025 GoPark Safaris. All rights reserved.
 
 ## Support
 

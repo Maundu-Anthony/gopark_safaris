@@ -5,7 +5,7 @@ const About = () => {
     <section id="about" className="py-20 bg-warm-khaki">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-safari-olive mb-4">About Go Park Safaris</h2>
+          <h2 className="text-4xl font-bold text-safari-olive mb-4">About GoPark Safaris</h2>
           <div className="w-24 h-1 bg-sunset-orange mx-auto"></div>
         </div>
 
@@ -15,7 +15,7 @@ const About = () => {
               Your Trusted Safari Partner
             </h3>
             <p className="text-dark-leather mb-4 leading-relaxed">
-              At Go Park Safaris, we are passionate about creating extraordinary safari experiences 
+              At GoPark Safaris, we are passionate about creating extraordinary safari experiences 
               that showcase the stunning beauty and diverse wildlife of Kenya. With years of expertise 
               in the tourism industry, we specialize in crafting personalized adventures that exceed 
               expectations.

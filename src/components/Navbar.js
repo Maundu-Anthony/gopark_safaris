@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-safari-olive">Go Park Safaris</h1>
+            <h1 className="text-2xl font-bold text-safari-olive">GoPark Safaris</h1>
           </div>
 
           {/* Desktop Menu */}
