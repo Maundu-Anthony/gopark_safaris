@@ -1,12 +1,11 @@
 import React from 'react';
 
-const PackageCard = ({ title, duration, price, features, image }) => {
-  console.log('PackageCard image:', image); // Debug log
+const PackageCard = ({ title, duration, price, features, image, onBookNow }) => {
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 border border-warm-khaki">
       <div className="h-48 overflow-hidden">
         {image ? (
-          <img src={image} alt={title} className="w-full h-full object-cover" onError={(e) => console.error('Image failed to load:', image)} />
+          <img src={image} alt={title} className="w-full h-full object-cover" />
         ) : (
           <div className="h-full bg-gradient-to-r from-safari-olive to-sunset-orange flex items-center justify-center">
             <svg className="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -31,7 +30,10 @@ const PackageCard = ({ title, duration, price, features, image }) => {
             </li>
           ))}
         </ul>
-        <button className="w-full bg-sunset-orange text-white py-3 rounded-lg hover:bg-sunset-orange/90 transition-colors duration-300 font-semibold">
+        <button 
+          onClick={onBookNow}
+          className="w-full bg-sunset-orange text-white py-3 rounded-lg hover:bg-sunset-orange/90 transition-colors duration-300 font-semibold"
+        >
           Book Now
         </button>
       </div>
