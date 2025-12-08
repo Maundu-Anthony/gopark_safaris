@@ -4,8 +4,8 @@ const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
-    // Fetch testimonials from db.json
-    fetch('http://localhost:3001/testimonials')
+    // Fetch testimonials from Vercel backend
+    fetch('https://gopark-safaris-backend.vercel.app/testimonials')
       .then(res => res.json())
       .then(data => setTestimonials(data))
       .catch(err => console.error('Error fetching testimonials:', err));

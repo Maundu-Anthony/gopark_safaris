@@ -23,9 +23,9 @@ const BookingModal = ({ isOpen, onClose, packageTitle }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Save to db.json via json-server
+    // Save to Vercel backend
     try {
-      const response = await fetch('http://localhost:3001/bookings', {
+      const response = await fetch('https://gopark-safaris-backend.vercel.app/bookings', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
