@@ -14,6 +14,13 @@ const ForgotPassword = () => {
     setError('');
     setMessage('');
 
+    // Validate that the email is the company email
+    if (email !== 'info@goparksafaris.co.ke') {
+      setError('Invalid email address. Only the company admin email is allowed.');
+      setLoading(false);
+      return;
+    }
+
     try {
       const response = await fetch('https://gopark-safaris-backend.vercel.app/forgot-password', {
         method: 'POST',

@@ -23,6 +23,12 @@ const ResetPassword = () => {
     e.preventDefault();
     setError('');
 
+    // Validate email is the company email
+    if (formData.email !== 'info@goparksafaris.co.ke') {
+      setError('Invalid email address. Only the company admin email is allowed.');
+      return;
+    }
+
     // Validate passwords match
     if (formData.newPassword !== formData.confirmPassword) {
       setError('New passwords do not match');
