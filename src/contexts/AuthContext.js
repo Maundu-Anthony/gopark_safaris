@@ -25,8 +25,11 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      // Fetch admin credentials from db.json
-      const response = await fetch('http://localhost:5000/admin');
+      // Use Vercel backend endpoint
+      const apiUrl = 'https://gopark-safaris-backend.vercel.app/admin';
+      
+      // Fetch admin credentials from backend
+      const response = await fetch(apiUrl);
       const adminData = await response.json();
       
       // Check credentials
@@ -39,7 +42,7 @@ export const AuthProvider = ({ children }) => {
       return { success: false, error: 'Invalid credentials' };
     } catch (error) {
       console.error('Login error:', error);
-      return { success: false, error: 'Unable to connect to server. Make sure json-server is running.' };
+      return { success: false, error: 'Unable to connect to server. Please try again later.' };
     }
   };
 

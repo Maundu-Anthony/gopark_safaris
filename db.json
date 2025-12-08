@@ -4,55 +4,6 @@
     "password": "admin123",
     "name": "Admin"
   },
-  "testimonials": [
-    {
-      "id": 1,
-      "name": "Sarah Johnson",
-      "location": "London, UK",
-      "rating": 5,
-      "comment": "Absolutely incredible experience! The Maasai Mara was breathtaking and our guide was knowledgeable and friendly. GoPark Safaris exceeded all our expectations!",
-      "date": "2025-10-15"
-    },
-    {
-      "id": 2,
-      "name": "Michael Chen",
-      "location": "San Francisco, USA",
-      "rating": 5,
-      "comment": "Best vacation ever! Saw the Big Five and the Great Migration. The accommodations were luxurious and the entire trip was perfectly organized.",
-      "date": "2025-09-22"
-    },
-    {
-      "id": 3,
-      "name": "Emma Williams",
-      "location": "Sydney, Australia",
-      "rating": 5,
-      "comment": "GoPark Safaris made our dream safari come true. Professional service from start to finish. The Amboseli elephants with Mt. Kilimanjaro backdrop was magical!",
-      "date": "2025-08-30"
-    },
-    {
-      "id": 4,
-      "name": "David Schmidt",
-      "location": "Berlin, Germany",
-      "rating": 4,
-      "comment": "Great safari experience with excellent guides. Saw so much wildlife and learned a lot. Would definitely recommend to friends and family.",
-      "date": "2025-11-05"
-    },
-    {
-      "id": 5,
-      "name": "Lisa Martinez",
-      "location": "Barcelona, Spain",
-      "rating": 5,
-      "comment": "The coastal package was perfect! Beautiful beaches, amazing snorkeling, and fascinating cultural experiences. Thank you GoPark Safaris!",
-      "date": "2025-07-18"
-    },
-    {
-      "id": 6,
-      "name": "James O'Brien",
-      "location": "Dublin, Ireland",
-      "rating": 5,
-      "comment": "Mt. Kenya trek was challenging but rewarding. Our guide was patient and supportive. The views from the summit were worth every step!",
-      "date": "2025-06-25"
-    }
-  ],
+  "testimonials": [],
   "bookings": []
 }
