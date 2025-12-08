@@ -1,4 +1,9 @@
 {
+  "admin": {
+    "email": "info@goparksafaris.co.ke",
+    "password": "admin123",
+    "name": "Admin"
+  },
   "testimonials": [
     {
       "id": 1,

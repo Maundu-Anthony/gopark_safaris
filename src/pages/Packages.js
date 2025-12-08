@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PackageCard from '../components/PackageCard';
 
 const Packages = ({ onBookNowClick }) => {
-  const packages = [
+  const [packages, setPackages] = useState([]);
+
+  const defaultPackages = [
     {
+      id: 1,
       title: 'The Mara Classic',
       duration: '3 Days / 2 Nights',
       price: 'From $450',
@@ -18,6 +21,7 @@ const Packages = ({ onBookNowClick }) => {
       ]
     },
     {
+      id: 2,
       title: 'Tsavo East Safari',
       duration: '3 Days / 2 Nights',
       price: 'From $420',
@@ -32,6 +36,7 @@ const Packages = ({ onBookNowClick }) => {
       ]
     },
     {
+      id: 3,
       title: 'Tsavo East, Amboseli & Tsavo West',
       duration: '4 Days / 3 Nights',
       price: 'From $680',
@@ -46,6 +51,7 @@ const Packages = ({ onBookNowClick }) => {
       ]
     },
     {
+      id: 4,
       title: 'Tsavo East & Taita Hills Safari',
       duration: '3 Days / 2 Nights',
       price: 'From $480',
@@ -60,6 +66,7 @@ const Packages = ({ onBookNowClick }) => {
       ]
     },
     {
+      id: 5,
       title: 'Great Migration Safari',
       duration: '7 Days / 6 Nights',
       price: 'From $1,450',
@@ -74,6 +81,7 @@ const Packages = ({ onBookNowClick }) => {
       ]
     },
     {
+      id: 6,
       title: 'Salt Lick Safari Package',
       duration: '3 Days / 2 Nights',
       price: 'From $520',
@@ -88,6 +96,7 @@ const Packages = ({ onBookNowClick }) => {
       ]
     },
     {
+      id: 7,
       title: 'Complete Kenya Safari',
       duration: '11 Days / 10 Nights',
       price: 'From $2,800',
@@ -102,6 +111,7 @@ const Packages = ({ onBookNowClick }) => {
       ]
     },
     {
+      id: 8,
       title: 'Honeymoon Safari',
       duration: 'Customizable',
       price: 'From $1,200',
@@ -117,6 +127,18 @@ const Packages = ({ onBookNowClick }) => {
     }
   ];
 
+  useEffect(() => {
+    // Load packages from localStorage or use defaults
+    const stored = localStorage.getItem('safariPackages');
+    if (stored) {
+      setPackages(JSON.parse(stored));
+    } else {
+      setPackages(defaultPackages);
+      localStorage.setItem('safariPackages', JSON.stringify(defaultPackages));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <section id="packages" className="py-20 bg-warm-khaki">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -131,7 +153,7 @@ const Packages = ({ onBookNowClick }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {packages.map((pkg, index) => (
             <PackageCard
-              key={index}
+              key={pkg.id || index}
               title={pkg.title}
               duration={pkg.duration}
               price={pkg.price}
