@@ -9,6 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
+            <img src="/images/logo.jpg" alt="GoPark Safaris" className="h-16 w-auto mb-4" />
             <h3 className="text-xl font-bold text-sunset-orange mb-4">GoPark Safaris</h3>
             <p className="text-warm-khaki/80 mb-4">
               Your trusted partner for unforgettable safari experiences across Kenya's most spectacular wildlife destinations.

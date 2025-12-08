@@ -29,6 +29,7 @@ const AdminLogin = () => {
     <div className="min-h-screen bg-warm-khaki flex items-center justify-center px-4">
       <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
         <div className="text-center mb-8">
+          <img src="/images/logo.jpg" alt="GoPark Safaris" className="h-20 w-auto mx-auto mb-4" />
           <h1 className="text-3xl font-bold text-safari-olive mb-2">Admin Login</h1>
           <p className="text-dark-leather">GoPark Safaris</p>
         </div>

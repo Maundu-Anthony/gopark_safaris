@@ -8,11 +8,12 @@ import BookingModal from './components/BookingModal';
 import Hero from './pages/Hero';
 import About from './pages/About';
 import Services from './pages/Services';
-import Packages from './pages/Packages';
 import Gallery from './pages/Gallery';
 import Testimonials from './pages/Testimonials';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+import ServiceDetail from './pages/ServiceDetail';
+import PackagesPage from './pages/PackagesPage';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -46,6 +47,12 @@ function App() {
         }
       />
 
+      {/* Service Detail Routes */}
+      <Route path="/services/:serviceId" element={<ServiceDetail />} />
+      
+      {/* Packages Page Route */}
+      <Route path="/packages" element={<PackagesPage />} />
+
       {/* Main Website */}
       <Route
         path="/"
@@ -55,7 +62,6 @@ function App() {
             <Hero onBookNowClick={openBookingModal} />
             <About />
             <Services />
-            <Packages onBookNowClick={openBookingModal} />
             <Gallery />
             <Testimonials />
             <FAQ />
