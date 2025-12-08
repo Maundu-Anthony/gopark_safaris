@@ -20,29 +20,29 @@ const Gallery = () => {
     setLightboxOpen(true);
   };
 
-  const closeLightbox = () => {
+  const closeLightbox = React.useCallback(() => {
     setLightboxOpen(false);
-  };
+  }, []);
 
-  const nextImage = () => {
+  const nextImage = React.useCallback(() => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % galleryImages.length);
-  };
+  }, [galleryImages.length]);
 
-  const prevImage = () => {
+  const prevImage = React.useCallback(() => {
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + galleryImages.length) % galleryImages.length);
-  };
+  }, [galleryImages.length]);
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = React.useCallback((e) => {
     if (!lightboxOpen) return;
     if (e.key === 'ArrowRight') nextImage();
     if (e.key === 'ArrowLeft') prevImage();
     if (e.key === 'Escape') closeLightbox();
-  };
+  }, [lightboxOpen, nextImage, prevImage, closeLightbox]);
 
   React.useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxOpen]);
+  }, [handleKeyDown]);
 
   return (
     <section id="gallery" className="py-20 bg-white">

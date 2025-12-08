@@ -4,45 +4,59 @@ import PackageCard from '../components/PackageCard';
 const Packages = ({ onBookNowClick }) => {
   const packages = [
     {
-      title: 'Maasai Mara Classic',
+      title: 'The Mara Classic',
       duration: '3 Days / 2 Nights',
       price: 'From $450',
       image: '/images/packages/mara.jpg',
       features: [
         'Game drives in Maasai Mara National Reserve',
         'Accommodation in luxury tented camp',
-        'All meals included',
+        'Full board',
         'Professional safari guide',
         'Park entrance fees',
         'Airport/hotel transfers'
       ]
     },
     {
-      title: 'Amboseli Explorer',
-      duration: '4 Days / 3 Nights',
-      price: 'From $580',
+      title: 'Tsavo East Safari',
+      duration: '3 Days / 2 Nights',
+      price: 'From $420',
       image: '/images/packages/amboseli.jpg',
       features: [
-        'Amboseli National Park game drives',
-        'View of Mount Kilimanjaro',
-        'Luxury lodge accommodation',
-        'Elephant observation',
-        'Cultural Maasai village visit',
-        'All meals and transportation'
+        'Tsavo East National Park game drives',
+        'Red elephants and diverse wildlife',
+        'Comfortable lodge accommodation',
+        'Full board',
+        'Professional guide',
+        'All park fees included'
       ]
     },
     {
-      title: 'Coastal Paradise',
-      duration: '5 Days / 4 Nights',
-      price: 'From $720',
+      title: 'Tsavo East, Amboseli & Tsavo West',
+      duration: '4 Days / 3 Nights',
+      price: 'From $680',
       image: '/images/packages/diani.jpg',
       features: [
-        'Beach resort accommodation',
-        'Mombasa city tour',
-        'Snorkeling and diving',
-        'Dhow sunset cruise',
-        'Visit to Fort Jesus',
-        'Water sports activities'
+        'Tsavo East National Park',
+        'Amboseli National Park',
+        'Tsavo West National Park',
+        'Full board',
+        'Professional safari guide',
+        'All park entrance fees'
+      ]
+    },
+    {
+      title: 'Tsavo East & Taita Hills Safari',
+      duration: '3 Days / 2 Nights',
+      price: 'From $480',
+      image: '/images/packages/migration.jpg',
+      features: [
+        'Tsavo East game drives',
+        'Taita Hills wildlife sanctuary',
+        'Salt Lick Lodge experience',
+        'Full board',
+        'Professional guide',
+        'All transfers included'
       ]
     },
     {
@@ -55,36 +69,50 @@ const Packages = ({ onBookNowClick }) => {
         'Maasai Mara & Serengeti',
         'Luxury lodge stays',
         'Hot air balloon safari option',
-        'All meals and park fees',
+        'Full board',
         'Expert wildlife guide'
       ]
     },
     {
-      title: 'Mt. Kenya Adventure',
-      duration: '5 Days / 4 Nights',
-      price: 'From $890',
-      image: '/images/packages/mount-kenya.jpg',
+      title: 'Salt Lick Safari Package',
+      duration: '3 Days / 2 Nights',
+      price: 'From $520',
+      image: '/images/packages/lc.jpg',
       features: [
-        'Mountain trekking expedition',
-        'Professional mountain guide',
-        'Camping equipment provided',
-        'All meals during trek',
-        'Park fees included',
-        'Pre and post trek accommodation'
+        'Iconic Salt Lick Lodge stay',
+        'Taita Hills wildlife sanctuary',
+        'Underground viewing bunker',
+        'Floodlit waterhole viewing',
+        'Full board',
+        'Professional guide'
       ]
     },
     {
       title: 'Complete Kenya Safari',
-      duration: '10 Days / 9 Nights',
-      price: 'From $2,200',
+      duration: '11 Days / 10 Nights',
+      price: 'From $2,800',
       image: '/images/packages/lc.jpg',
       features: [
-        'Multiple national parks',
-        'Maasai Mara, Amboseli, Nakuru',
-        'Beach extension in Mombasa',
-        'Luxury accommodations',
-        'All meals and activities',
+        'Maasai Mara National Reserve',
+        'Lake Nakuru National Park',
+        'Tsavo East National Park',
+        'Amboseli National Park',
+        'Full board',
         'Comprehensive wildlife experience'
+      ]
+    },
+    {
+      title: 'Honeymoon Safari',
+      duration: 'Customizable',
+      price: 'From $1,200',
+      image: '/images/packages/diani.jpg',
+      features: [
+        'Romantic luxury accommodations',
+        'Private game drives',
+        'Candlelit dinners',
+        'Champagne breakfast in the bush',
+        'Full board',
+        'Special honeymoon amenities'
       ]
     }
   ];
