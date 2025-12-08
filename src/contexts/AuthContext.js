@@ -2,6 +2,16 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
 
+// Simple SHA-256 hash function for password hashing
+const hashPassword = async (password) => {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(password);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  return hashHex;
+};
+
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
@@ -32,8 +42,11 @@ export const AuthProvider = ({ children }) => {
       const response = await fetch(apiUrl);
       const adminData = await response.json();
       
-      // Check credentials
-      if (email === adminData.email && password === adminData.password) {
+      // Hash the input password
+      const hashedPassword = await hashPassword(password);
+      
+      // Check credentials - compare email and hashed password
+      if (email === adminData.email && hashedPassword === adminData.passwordHash) {
         const userData = { email, name: adminData.name };
         setUser(userData);
         localStorage.setItem('adminUser', JSON.stringify(userData));
