@@ -45,8 +45,12 @@ export const AuthProvider = ({ children }) => {
       // Hash the input password
       const hashedPassword = await hashPassword(password);
       
-      // Check credentials - compare email and hashed password
-      if (email === adminData.email && hashedPassword === adminData.passwordHash) {
+      // Check credentials - support both old (password) and new (passwordHash) formats
+      const isValidPassword = adminData.passwordHash 
+        ? hashedPassword === adminData.passwordHash  // New format with hash
+        : password === adminData.password;            // Old format (backwards compatibility)
+      
+      if (email === adminData.email && isValidPassword) {
         const userData = { email, name: adminData.name };
         setUser(userData);
         localStorage.setItem('adminUser', JSON.stringify(userData));
