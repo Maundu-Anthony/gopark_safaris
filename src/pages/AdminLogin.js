@@ -76,8 +76,11 @@ const AdminLogin = () => {
           </button>
         </form>
 
-        <div className="mt-6 text-center">
-          <a href="/" className="text-safari-olive hover:text-sunset-orange transition">
+        <div className="mt-6 text-center space-y-2">
+          <a href="/admin/forgot-password" className="block text-safari-olive hover:text-sunset-orange transition">
+            Forgot Password?
+          </a>
+          <a href="/" className="block text-safari-olive hover:text-sunset-orange transition">
             ← Back to Website
           </a>
         </div>

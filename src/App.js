@@ -15,6 +15,8 @@ import Contact from './pages/Contact';
 import ServiceDetail from './pages/ServiceDetail';
 import PackagesPage from './pages/PackagesPage';
 import AdminLogin from './pages/AdminLogin';
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
 import AdminDashboard from './pages/AdminDashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import useScrollAnimation from './hooks/useScrollAnimation';
@@ -38,6 +40,8 @@ function App() {
     <Routes>
       {/* Admin Routes */}
       <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/admin/forgot-password" element={<ForgotPassword />} />
+      <Route path="/admin/reset-password" element={<ResetPassword />} />
       <Route
         path="/admin/dashboard"
         element={
