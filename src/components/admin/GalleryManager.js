@@ -83,9 +83,29 @@ const ImageForm = ({ onSave, onCancel }) => {
     alt: '',
     caption: ''
   });
+  const [imageFile, setImageFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState('');
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImageFile(file);
+      // Create preview and convert to base64
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result);
+        setFormData({ ...formData, src: reader.result });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!formData.src) {
+      alert('Please upload an image or provide an image URL');
+      return;
+    }
     onSave(formData);
   };
 
@@ -94,15 +114,44 @@ const ImageForm = ({ onSave, onCancel }) => {
       <h3 className="text-xl font-bold text-safari-olive mb-4">Add New Image</h3>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-safari-olive font-semibold mb-2">Image URL</label>
+          <label className="block text-safari-olive font-semibold mb-2">Upload Image</label>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sunset-orange"
+          />
+          <p className="text-sm text-gray-600 mt-2">Or enter image URL below:</p>
+        </div>
+
+        <div>
+          <label className="block text-safari-olive font-semibold mb-2">Image URL (Optional)</label>
           <input
             type="text"
             value={formData.src}
-            onChange={(e) => setFormData({ ...formData, src: e.target.value })}
+            onChange={(e) => {
+              setFormData({ ...formData, src: e.target.value });
+              setImagePreview(e.target.value);
+            }}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sunset-orange"
-            required
+            placeholder="/images/gallery/... or https://..."
           />
         </div>
+
+        {imagePreview && (
+          <div>
+            <label className="block text-safari-olive font-semibold mb-2">Preview</label>
+            <img 
+              src={imagePreview} 
+              alt="Preview" 
+              className="w-full h-64 object-cover rounded-lg"
+              onError={(e) => {
+                e.target.src = 'https://via.placeholder.com/400x300?text=Image+Preview';
+              }}
+            />
+          </div>
+        )}
+
         <div>
           <label className="block text-safari-olive font-semibold mb-2">Alt Text</label>
           <input
@@ -110,6 +159,7 @@ const ImageForm = ({ onSave, onCancel }) => {
             value={formData.alt}
             onChange={(e) => setFormData({ ...formData, alt: e.target.value })}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sunset-orange"
+            placeholder="Description for accessibility"
             required
           />
         </div>

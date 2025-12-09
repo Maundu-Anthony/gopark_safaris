@@ -143,6 +143,22 @@ const PackageForm = ({ package: pkg, onSave, onCancel }) => {
       features: ['']
     }
   );
+  const [imageFile, setImageFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState(pkg?.image || '');
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImageFile(file);
+      // Create preview
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result);
+        setFormData({ ...formData, image: reader.result });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleFeatureChange = (index, value) => {
     const newFeatures = [...formData.features];
@@ -207,15 +223,39 @@ const PackageForm = ({ package: pkg, onSave, onCancel }) => {
         </div>
 
         <div>
-          <label className="block text-safari-olive font-semibold mb-2">Image URL</label>
-          <input
-            type="text"
-            value={formData.image}
-            onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sunset-orange"
-            placeholder="/images/packages/..."
-            required
-          />
+          <label className="block text-safari-olive font-semibold mb-2">Package Image</label>
+          <div className="space-y-3">
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sunset-orange"
+            />
+            <div className="text-sm text-gray-600">Or enter image URL:</div>
+            <input
+              type="text"
+              value={formData.image}
+              onChange={(e) => {
+                setFormData({ ...formData, image: e.target.value });
+                setImagePreview(e.target.value);
+              }}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sunset-orange"
+              placeholder="/images/packages/... or https://..."
+            />
+            {imagePreview && (
+              <div className="mt-2">
+                <p className="text-sm text-gray-600 mb-2">Preview:</p>
+                <img 
+                  src={imagePreview} 
+                  alt="Preview" 
+                  className="w-full h-48 object-cover rounded-lg"
+                  onError={(e) => {
+                    e.target.src = 'https://via.placeholder.com/400x300?text=Image+Not+Found';
+                  }}
+                />
+              </div>
+            )}
+          </div>
         </div>
 
         <div>
